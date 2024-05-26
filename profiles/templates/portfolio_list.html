@@ -1,0 +1,12 @@
+<!-- templates/profiles/portfolio_list.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>My Portfolios</h1>
+  <a href="{% url 'portfolio_create' %}">Create New Portfolio</a>
+  <ul>
+    {% for portfolio in portfolios %}
+      <li><a href="{% url 'portfolio_detail' portfolio.pk %}">{{ portfolio.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
